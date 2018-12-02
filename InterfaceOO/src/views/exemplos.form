@@ -76,7 +76,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Exemplo de pergunta aberta com resposta curta"/>
+        <Property name="text" type="java.lang.String" value="Exemplo de pergunta aberta"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButton3">

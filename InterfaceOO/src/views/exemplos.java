@@ -42,7 +42,7 @@ public class exemplos extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Exemplos");
 
-        jButton1.setText("Exemplo de pergunta aberta com resposta curta");
+        jButton1.setText("Exemplo de pergunta aberta");
 
         jButton3.setText("Exemplo de pergunta fechada com resposta do tipo lista");
 
