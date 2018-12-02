@@ -16,6 +16,7 @@ public class pergunta_fechada_alternativa extends javax.swing.JFrame {
      */
     public pergunta_fechada_alternativa() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

@@ -16,6 +16,7 @@ public class pergunta_aberta_longa extends javax.swing.JFrame {
      */
     public pergunta_aberta_longa() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

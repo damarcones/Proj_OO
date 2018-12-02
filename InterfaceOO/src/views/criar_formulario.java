@@ -15,6 +15,7 @@ public class criar_formulario extends javax.swing.JFrame {
     /** Creates new form criar_formulario */
     public criar_formulario() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /** This method is called from within the constructor to

@@ -16,6 +16,7 @@ public class pergunta_fechada_opcional extends javax.swing.JFrame {
      */
     public pergunta_fechada_opcional() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
