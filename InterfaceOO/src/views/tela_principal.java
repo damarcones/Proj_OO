@@ -40,10 +40,10 @@ public class tela_principal extends javax.swing.JFrame {
         jLabel1.setText("Bem Vindo !!!");
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
-        jMenu1.setText("Criar Formulário");
+        jMenu1.setText("Criar Formulário|");
         jMenuBar1.add(jMenu1);
 
-        jMenu3.setText("Responder Formulário");
+        jMenu3.setText("Responder Formulário|");
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Visualizar formulário");
