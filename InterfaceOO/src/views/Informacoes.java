@@ -103,7 +103,7 @@ public class Informacoes extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel6.setText("Nome: Péricles");
+        jLabel6.setText("Nome: Pericles");
 
         jLabel7.setText("Matrícula: ");
 
