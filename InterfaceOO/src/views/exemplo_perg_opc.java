@@ -16,6 +16,7 @@ public class exemplo_perg_opc extends javax.swing.JFrame {
      */
     public exemplo_perg_opc() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -42,6 +43,11 @@ public class exemplo_perg_opc extends javax.swing.JFrame {
         jLabel2.setText("Exemplo de pergunta com resposta do tipo opcional");
 
         jButton1.setText("Voltar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/p.opc.png"))); // NOI18N
 
@@ -77,6 +83,11 @@ public class exemplo_perg_opc extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        new exemplos().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -108,7 +119,7 @@ public class exemplo_perg_opc extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new exemplo_perg_opc().setVisible(true);
+                new exemplos().setVisible(true);
             }
         });
     }
