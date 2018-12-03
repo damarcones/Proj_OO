@@ -38,6 +38,7 @@ public class criar_formulario extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu9 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem14 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -97,6 +98,9 @@ public class criar_formulario extends javax.swing.JFrame {
             }
         });
         jMenu9.add(jMenuItem10);
+
+        jMenuItem14.setText("Excluir pergunta");
+        jMenu9.add(jMenuItem14);
 
         jMenuBar1.add(jMenu9);
 
@@ -281,6 +285,7 @@ public class criar_formulario extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
