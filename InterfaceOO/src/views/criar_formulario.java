@@ -47,7 +47,11 @@ public class criar_formulario extends javax.swing.JFrame {
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem13 = new javax.swing.JMenuItem();
+        jMenuItem12 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
+        jMenuItem11 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         jMenu3.setText("jMenu3");
 
@@ -153,9 +157,23 @@ public class criar_formulario extends javax.swing.JFrame {
         jMenuBar1.add(jMenu6);
 
         jMenu1.setText("Exemplos |");
+
+        jMenuItem13.setText("Pergunta aberta");
+        jMenu1.add(jMenuItem13);
+
+        jMenuItem12.setText("Pergunta fechada");
+        jMenu1.add(jMenuItem12);
+
         jMenuBar1.add(jMenu1);
 
         jMenu8.setText("Finalizar");
+
+        jMenuItem11.setText("Cancelar criação");
+        jMenu8.add(jMenuItem11);
+
+        jMenuItem1.setText("Finalizar formulário");
+        jMenu8.add(jMenuItem1);
+
         jMenuBar1.add(jMenu8);
 
         setJMenuBar(jMenuBar1);
@@ -258,7 +276,11 @@ public class criar_formulario extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
