@@ -100,6 +100,11 @@ public class criar_formulario extends javax.swing.JFrame {
         jMenu9.add(jMenuItem10);
 
         jMenuItem14.setText("Excluir pergunta");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
         jMenu9.add(jMenuItem14);
 
         jMenuBar1.add(jMenu9);
@@ -183,9 +188,19 @@ public class criar_formulario extends javax.swing.JFrame {
         jMenu8.setText("Finalizar");
 
         jMenuItem11.setText("Cancelar criação");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
         jMenu8.add(jMenuItem11);
 
         jMenuItem1.setText("Finalizar formulário");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu8.add(jMenuItem1);
 
         jMenuBar1.add(jMenu8);
@@ -252,6 +267,23 @@ public class criar_formulario extends javax.swing.JFrame {
         new exemplo_perg_aberta().setVisible(true);
         dispose();
     }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        new excluir_formulario().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        new tela_principal().setVisible(true);
+        dispose();
+        //Vamos descartar todos os dados salvos no txt temp
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        new finalizar_formulario().setVisible(true);
+        dispose();  
+        // salva o txt na pasta permanente
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments

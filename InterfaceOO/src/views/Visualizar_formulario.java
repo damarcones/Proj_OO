@@ -16,6 +16,7 @@ public class Visualizar_formulario extends javax.swing.JFrame {
      */
     public Visualizar_formulario() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
