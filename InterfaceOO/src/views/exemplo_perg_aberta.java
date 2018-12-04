@@ -16,6 +16,7 @@ public class exemplo_perg_aberta extends javax.swing.JFrame {
      */
     public exemplo_perg_aberta() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -42,6 +43,11 @@ public class exemplo_perg_aberta extends javax.swing.JFrame {
         jLabel3.setText("Pergunta com resposta longa: até 300 caracteres");
 
         jButton1.setText("Voltar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Noto Sans", 1, 16)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -83,6 +89,11 @@ public class exemplo_perg_aberta extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        new criar_formulario().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

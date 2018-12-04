@@ -163,9 +163,19 @@ public class criar_formulario extends javax.swing.JFrame {
         jMenu1.setText("Exemplos |");
 
         jMenuItem13.setText("Pergunta aberta");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem13ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem13);
 
         jMenuItem12.setText("Pergunta fechada");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem12);
 
         jMenuBar1.add(jMenu1);
@@ -232,6 +242,16 @@ public class criar_formulario extends javax.swing.JFrame {
         new pergunta_fechada_opcional().setVisible(true);
         dispose();
     }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        new exemplos().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+        new exemplo_perg_aberta().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
 
     /**
      * @param args the command line arguments
