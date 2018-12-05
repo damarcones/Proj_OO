@@ -6,6 +6,9 @@
 
 package views;
 
+import Receber_dados.ler_descricao;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author damarcones
@@ -149,8 +152,22 @@ public class descricao_formulario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new criar_formulario().setVisible(true);
-        dispose();
+        ler_descricao descr = new ler_descricao();
+        
+        descr.setnome(jTextField1.getText());
+        descr.setinicio(jFormattedTextField1.getText());
+        descr.setfim(jFormattedTextField2.getText());
+        descr.setdescricao(jTextArea1.getText());
+        
+       JOptionPane.showMessageDialog(null, descr.salvar());
+      
+       jTextField1.setText("");
+       jFormattedTextField1.setText("");
+       jFormattedTextField2.setText("");
+       jTextArea1.setText("");       
+
+       new criar_formulario().setVisible(true);
+       dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
