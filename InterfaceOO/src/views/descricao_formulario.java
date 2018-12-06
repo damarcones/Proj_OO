@@ -6,19 +6,60 @@
 
 package views;
 
-import Receber_dados.ler_descricao;
-import javax.swing.JOptionPane;
+import javax.swing.*;
+import java.io.*;
 
 /**
  *
  * @author damarcones
  */
 public class descricao_formulario extends javax.swing.JFrame {
+    
+    private String nome;
+    private String inicio;
+    private String fim;
+    private String descricao;
+    public Object salvar;
 
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getInicio() {
+        return inicio;
+    }
+
+    public void setInicio(String inicio) {
+        this.inicio = inicio;
+    }
+
+    public String getFim() {
+        return fim;
+    }
+
+    public void setFim(String fim) {
+        this.fim = fim;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
     /** Creates new form descricao_formulario */
     public descricao_formulario() {
         initComponents();
         this.setLocationRelativeTo(null);
+        Ler_descricao descr = new Ler_descricao();
+        
+    
     }
 
     /** This method is called from within the constructor to
@@ -36,11 +77,11 @@ public class descricao_formulario extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
+        txtNome = new javax.swing.JTextField();
+        txtInicio = new javax.swing.JFormattedTextField();
+        txtFim = new javax.swing.JFormattedTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtTdescricao = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,27 +98,27 @@ public class descricao_formulario extends javax.swing.JFrame {
 
         jLabel5.setText("Descrição");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtNomeActionPerformed(evt);
             }
         });
 
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            txtInicio.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
         try {
-            jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            txtFim.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtTdescricao.setColumns(20);
+        txtTdescricao.setRows(5);
+        jScrollPane1.setViewportView(txtTdescricao);
 
         jButton1.setText("Salvar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -100,14 +141,14 @@ public class descricao_formulario extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jButton1)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField1)
+                                .addComponent(txtNome)
                                 .addComponent(jLabel4)
                                 .addComponent(jLabel2)
                                 .addComponent(jLabel5)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtFim, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 62, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -119,15 +160,15 @@ public class descricao_formulario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtFim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -152,28 +193,62 @@ public class descricao_formulario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ler_descricao descr = new ler_descricao();
+        nome = txtNome.getText();
+               
+       inicio = txtInicio.getText();
+        fim = txtFim.getText();
+        descricao = txtTdescricao.getText();
         
-        descr.setnome(jTextField1.getText());
-        descr.setinicio(jFormattedTextField1.getText());
-        descr.setfim(jFormattedTextField2.getText());
-        descr.setdescricao(jTextArea1.getText());
-        
-       JOptionPane.showMessageDialog(null, descr.salvar());
-      
-       jTextField1.setText("");
-       jFormattedTextField1.setText("");
-       jFormattedTextField2.setText("");
-       jTextArea1.setText("");       
+        try {
+            FileWriter fw = new FileWriter("descricao.txt", true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            
+            bw.write("Nome do formulário: "+nome);
+            bw.newLine();
+            bw.write("Data de Inicio: "+inicio);
+            bw.newLine();
+            bw.write("Data de termino: "+fim);
+            bw.newLine();
+            bw.write("Descrição do formulário: "+descricao);
+            bw.newLine();
+            bw.write("");
+            bw.newLine();
 
+            bw.close();
+            fw.close();
+
+           // pw.flush(); //envia os dados direto pro arquivo
+      
+            
+            
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Erro: Nao foi possivel salvar no arquivo!", "Error", 2);
+        }
+        
+       
+    
+    
+    
+        
+        
+       //JOptionPane.showMessageDialog(null, ler_descricao.salvar());
+      
+       txtNome.setText("");
+       txtInicio.setText("");
+       txtFim.setText("");
+       txtTdescricao.setText("");   
+      // return ler_descricao.setnome;
        new criar_formulario().setVisible(true);
        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+//        Ler_descricao descr = new Ler_descricao();
+//        
+//        descr.setnome(txtNome.getText());
+    }//GEN-LAST:event_txtNomeActionPerformed
 
+    
     /**
      * @param args the command line arguments
      */
@@ -211,8 +286,6 @@ public class descricao_formulario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -220,8 +293,10 @@ public class descricao_formulario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JFormattedTextField txtFim;
+    private javax.swing.JFormattedTextField txtInicio;
+    private javax.swing.JTextField txtNome;
+    private javax.swing.JTextArea txtTdescricao;
     // End of variables declaration//GEN-END:variables
 
 }
