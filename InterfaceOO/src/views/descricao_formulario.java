@@ -57,9 +57,6 @@ public class descricao_formulario extends javax.swing.JFrame {
     public descricao_formulario() {
         initComponents();
         this.setLocationRelativeTo(null);
-        Ler_descricao descr = new Ler_descricao();
-        
-    
     }
 
     /** This method is called from within the constructor to
