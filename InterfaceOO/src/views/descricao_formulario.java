@@ -204,9 +204,14 @@ public class descricao_formulario extends javax.swing.JFrame {
     inicio = txtInicio.getText();
     fim = txtFim.getText();
     descricao = txtTdescricao.getText();
+    
+    if ( txtTdescricao.getText().trim().equals("")  ||txtNome.getText().trim().equals("") || txtInicio.getText().trim().isEmpty() || txtFim.getText().trim().isEmpty() ){
+        new erro_excecao().setVisible(true);
+    }
+    else{
         
         try {
-            FileWriter fw = new FileWriter("descricao.txt", true);
+            FileWriter fw = new FileWriter("formulario/"+nome+".txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
             
             bw.write("Nome do formulário: "+nome);
@@ -239,13 +244,14 @@ public class descricao_formulario extends javax.swing.JFrame {
         
        //JOptionPane.showMessageDialog(null, ler_descricao.salvar());
       
-       txtNome.setText("");
+       
        txtInicio.setText("");
        txtFim.setText("");
        txtTdescricao.setText("");   
       // return ler_descricao.setnome;
        new criar_formulario().setVisible(true);
        dispose();
+    }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed

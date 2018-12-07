@@ -6,18 +6,56 @@
 package views;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author damarcones
  */
 public class Questionario extends javax.swing.JFrame {
+private String nome;
+    private String inicio;
+    private String fim;
+    private String descricao;
+    public Object salvar;
 
-    /**
-     * Creates new form Questionario
-     */
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getInicio() {
+        return inicio;
+    }
+
+    public void setInicio(String inicio) {
+        this.inicio = inicio;
+    }
+
+    public String getFim() {
+        return fim;
+    }
+
+    public void setFim(String fim) {
+        this.fim = fim;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
     public Questionario() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -141,7 +179,33 @@ public class Questionario extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1AncestorAdded
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    nome = jLabel1.getText();
+    inicio = jTextArea1.getText();
         
+        try {
+            FileWriter fw = new FileWriter("resposta.txt", true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            
+            bw.write(nome);
+            bw.newLine();
+            bw.write(inicio);
+            bw.newLine();
+            
+            bw.write("");
+            bw.newLine();
+
+            bw.close();
+            fw.close();
+
+           // pw.flush(); //envia os dados direto pro arquivo
+      
+            
+            
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Erro: Nao foi possivel salvar no arquivo!", "Error", 2);
+        }
+        
+        jTextArea1.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

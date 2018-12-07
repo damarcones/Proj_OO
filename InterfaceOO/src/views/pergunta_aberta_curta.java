@@ -130,6 +130,7 @@ public class pergunta_aberta_curta extends javax.swing.JFrame {
                 
         pergunta = areaPergunta.getText();
         
+        
         try {
             FileWriter fw = new FileWriter("descricao.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
