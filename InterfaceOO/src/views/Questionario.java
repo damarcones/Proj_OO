@@ -44,12 +44,12 @@ public class Questionario extends javax.swing.JFrame {
 
         jLabel1.setText(" ");
         jLabel1.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jLabel1AncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -60,6 +60,11 @@ public class Questionario extends javax.swing.JFrame {
         jButton1.setText("Anterior");
 
         jButton2.setText("Próximo");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -120,16 +125,24 @@ public class Questionario extends javax.swing.JFrame {
     private void jLabel1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel1AncestorAdded
         try{
          BufferedReader br = new BufferedReader(new FileReader("descricao.txt"));
-         while(br.ready()){
+         if(br.ready()){
             String linha = br.readLine();
             //System.out.println(linha);
             jLabel1.setText(linha);
+            br.ready();
+            
+            
+            
          }
          br.close();
       }catch(IOException ioe){
          ioe.printStackTrace();
       }
     }//GEN-LAST:event_jLabel1AncestorAdded
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
