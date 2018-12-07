@@ -88,6 +88,15 @@ public class descricao_formulario extends javax.swing.JFrame {
         jLabel1.setText("DESCRIÇÃO");
 
         jLabel2.setText("Nome");
+        jLabel2.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jLabel2AncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
 
         jLabel3.setText("Data de início");
 
@@ -190,11 +199,11 @@ public class descricao_formulario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        nome = txtNome.getText();
-               
-       inicio = txtInicio.getText();
-        fim = txtFim.getText();
-        descricao = txtTdescricao.getText();
+    
+    nome = txtNome.getText();
+    inicio = txtInicio.getText();
+    fim = txtFim.getText();
+    descricao = txtTdescricao.getText();
         
         try {
             FileWriter fw = new FileWriter("descricao.txt", true);
@@ -244,6 +253,10 @@ public class descricao_formulario extends javax.swing.JFrame {
 //        
 //        descr.setnome(txtNome.getText());
     }//GEN-LAST:event_txtNomeActionPerformed
+
+    private void jLabel2AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel2AncestorAdded
+            
+    }//GEN-LAST:event_jLabel2AncestorAdded
 
     
     /**

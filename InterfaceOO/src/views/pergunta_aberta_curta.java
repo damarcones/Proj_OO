@@ -4,16 +4,25 @@
  * and open the template in the editor.
  */
 package views;
-
+import javax.swing.*;
+import java.io.*;
 /**
  *
  * @author damarcones
  */
 public class pergunta_aberta_curta extends javax.swing.JFrame {
+    
+    private String pergunta;
+    
+    
+    public String getPergunta() {
+        return pergunta;
+    }
 
-    /**
-     * Creates new form pergunta_aberta
-     */
+    public void setPergunta(String pergunta) {
+        this.pergunta = pergunta;
+    }
+    
     public pergunta_aberta_curta() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -32,7 +41,7 @@ public class pergunta_aberta_curta extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        areaPergunta = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
@@ -44,18 +53,18 @@ public class pergunta_aberta_curta extends javax.swing.JFrame {
 
         jLabel2.setText("Pergunta:");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.addAncestorListener(new javax.swing.event.AncestorListener() {
+        areaPergunta.setColumns(20);
+        areaPergunta.setRows(5);
+        areaPergunta.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                jTextArea1AncestorAdded(evt);
+                areaPerguntaAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        jScrollPane1.setViewportView(jTextArea1);
+        jScrollPane1.setViewportView(areaPergunta);
 
         jButton1.setText("Salvar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -118,13 +127,37 @@ public class pergunta_aberta_curta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+                
+        pergunta = areaPergunta.getText();
+        
+        try {
+            FileWriter fw = new FileWriter("descricao.txt", true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            
+            bw.write(pergunta);
+            bw.newLine();
+          
+            bw.write("");
+            bw.newLine();
+
+            bw.close();
+            fw.close();
+
+           // pw.flush(); //envia os dados direto pro arquivo
+      
+            
+            
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Erro: Nao foi possivel salvar no arquivo!", "Error", 2);
+        }
+        
         new criar_formulario().setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextArea1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTextArea1AncestorAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextArea1AncestorAdded
+    private void areaPerguntaAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_areaPerguntaAncestorAdded
+
+    }//GEN-LAST:event_areaPerguntaAncestorAdded
 
     /**
      * @param args the command line arguments
@@ -163,12 +196,12 @@ public class pergunta_aberta_curta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea areaPergunta;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

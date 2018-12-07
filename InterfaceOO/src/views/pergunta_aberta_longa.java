@@ -5,15 +5,25 @@
  */
 package views;
 
+import javax.swing.*;
+import java.io.*;
 /**
  *
  * @author damarcones
  */
 public class pergunta_aberta_longa extends javax.swing.JFrame {
 
-    /**
-     * Creates new form pergunta_aberta
-     */
+    private String pergunta;
+    
+    
+    public String getPergunta() {
+        return pergunta;
+    }
+
+    public void setPergunta(String pergunta) {
+        this.pergunta = pergunta;
+    }
+    
     public pergunta_aberta_longa() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -32,7 +42,7 @@ public class pergunta_aberta_longa extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        areaText = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
@@ -44,9 +54,9 @@ public class pergunta_aberta_longa extends javax.swing.JFrame {
 
         jLabel2.setText("Pergunta:");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        areaText.setColumns(20);
+        areaText.setRows(5);
+        jScrollPane1.setViewportView(areaText);
 
         jButton1.setText("Salvar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -108,6 +118,29 @@ public class pergunta_aberta_longa extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        pergunta = areaText.getText();
+        
+        try {
+            FileWriter fw = new FileWriter("descricao.txt", true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            
+            bw.write(pergunta);
+            bw.newLine();
+          
+            bw.write("");
+            bw.newLine();
+
+            bw.close();
+            fw.close();
+
+           // pw.flush(); //envia os dados direto pro arquivo
+      
+            
+            
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Erro: Nao foi possivel salvar no arquivo!", "Error", 2);
+        }
+        
         
         setLocationRelativeTo( null );
         setDefaultCloseOperation(criar_formulario.DISPOSE_ON_CLOSE);
@@ -153,12 +186,12 @@ public class pergunta_aberta_longa extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea areaText;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
