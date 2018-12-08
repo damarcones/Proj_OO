@@ -6,6 +6,7 @@
 
 package views;
 
+import excecoes.erro_excecao;
 import javax.swing.*;
 import java.io.*;
 

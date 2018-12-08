@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package views;
+import excecoes.erro_enunciado2;
 import java.awt.Menu;
 import javax.swing.*;
 import java.io.*;

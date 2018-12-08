@@ -5,6 +5,7 @@
  */
 package views;
 
+import excecoes.erro_enunciado;
 import javax.swing.*;
 import java.io.*;
 /**
