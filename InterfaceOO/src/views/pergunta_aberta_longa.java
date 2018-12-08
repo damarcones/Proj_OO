@@ -120,6 +120,11 @@ public class pergunta_aberta_longa extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         pergunta = areaText.getText();
         
+    if ( areaText.getText().trim().equals(""))
+           new erro_enunciado().setVisible(true);
+        
+    else{
+        
         try {
             FileWriter fw = new FileWriter("descricao.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
@@ -140,12 +145,14 @@ public class pergunta_aberta_longa extends javax.swing.JFrame {
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Erro: Nao foi possivel salvar no arquivo!", "Error", 2);
         }
+         
         
         
         setLocationRelativeTo( null );
         setDefaultCloseOperation(criar_formulario.DISPOSE_ON_CLOSE);
         new criar_formulario().setVisible(true);
         dispose();
+    }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

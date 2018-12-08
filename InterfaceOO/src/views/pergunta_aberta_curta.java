@@ -4,8 +4,11 @@
  * and open the template in the editor.
  */
 package views;
+import java.awt.Menu;
 import javax.swing.*;
 import java.io.*;
+import views.criar_formulario.*;
+//import static views.descricao_formulario.nome;
 /**
  *
  * @author damarcones
@@ -13,6 +16,17 @@ import java.io.*;
 public class pergunta_aberta_curta extends javax.swing.JFrame {
     
     private String pergunta;
+    private String nome;
+    
+  //  nome = views.criar_formulario().nome;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
     
     
     public String getPergunta() {
@@ -55,15 +69,6 @@ public class pergunta_aberta_curta extends javax.swing.JFrame {
 
         areaPergunta.setColumns(20);
         areaPergunta.setRows(5);
-        areaPergunta.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                areaPerguntaAncestorAdded(evt);
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
         jScrollPane1.setViewportView(areaPergunta);
 
         jButton1.setText("Salvar");
@@ -130,9 +135,12 @@ public class pergunta_aberta_curta extends javax.swing.JFrame {
                 
         pergunta = areaPergunta.getText();
         
+    if ( jButton1.getText().trim().equals(""))
+           new erro_enunciado2().setVisible(true);
         
+    else{
         try {
-            FileWriter fw = new FileWriter("descricao.txt", true);
+            FileWriter fw = new FileWriter("formulario/"+nome+".txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
             
             bw.write(pergunta);
@@ -154,11 +162,8 @@ public class pergunta_aberta_curta extends javax.swing.JFrame {
         
         new criar_formulario().setVisible(true);
         dispose();
+    }
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void areaPerguntaAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_areaPerguntaAncestorAdded
-
-    }//GEN-LAST:event_areaPerguntaAncestorAdded
 
     /**
      * @param args the command line arguments
@@ -205,4 +210,6 @@ public class pergunta_aberta_curta extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+
+   
 }
