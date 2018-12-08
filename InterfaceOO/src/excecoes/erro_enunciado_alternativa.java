@@ -1,20 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package excecoes;
 
-/**
- *
- * @author bruna
- */
-public class erro_enunciado extends javax.swing.JFrame {
+
+public class erro_enunciado_alternativa extends javax.swing.JFrame {
 
     /**
      * Creates new form erro_enunciado
      */
-    public erro_enunciado() {
+    public erro_enunciado_alternativa() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -92,7 +85,7 @@ public class erro_enunciado extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+       
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -113,14 +106,18 @@ public class erro_enunciado extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(erro_enunciado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(erro_enunciado_alternativa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(erro_enunciado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(erro_enunciado_alternativa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(erro_enunciado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(erro_enunciado_alternativa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(erro_enunciado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(erro_enunciado_alternativa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -129,7 +126,7 @@ public class erro_enunciado extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new erro_enunciado().setVisible(true);
+                new erro_enunciado_alternativa().setVisible(true);
             }
         });
     }

@@ -6,7 +6,7 @@
 
 package views;
 
-import excecoes.erro_excecao;
+import excecoes.erro_descricao;
 import javax.swing.*;
 import java.io.*;
 
@@ -207,7 +207,7 @@ public class descricao_formulario extends javax.swing.JFrame {
     descricao = txtTdescricao.getText();
     
     if ( txtTdescricao.getText().trim().equals("")  ||txtNome.getText().trim().equals("") || txtInicio.getText().trim().isEmpty() || txtFim.getText().trim().isEmpty() ){
-        new erro_excecao().setVisible(true);
+        new erro_descricao().setVisible(true);
     }
     else{
         
