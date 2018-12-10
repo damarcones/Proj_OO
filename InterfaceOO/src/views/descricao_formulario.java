@@ -6,6 +6,7 @@ import excecoes.erro_descricao;
 import javax.swing.*;
 import java.io.*;
 import leitura_e_escrita.PegarDescricao;
+import leitura_e_escrita.Pegar_pergunta;
 
 public class descricao_formulario extends javax.swing.JFrame {
 
@@ -157,15 +158,13 @@ public class descricao_formulario extends javax.swing.JFrame {
     String fim = txtFim.getText();
     String descricao = txtTdescricao.getText();
     
-     DescricaoVazia Vazia = new DescricaoVazia(nome, inicio, fim, descricao);
+    DescricaoVazia Vazia = new DescricaoVazia(nome, inicio, fim, descricao);
+    Pegar_pergunta curta = new Pegar_pergunta(nome);
    
      
     if(Vazia.vazia == 0){
         PegarDescricao pegar = new PegarDescricao(nome, inicio, fim, descricao);
-        txtNome.setText("");
-        txtInicio.setText("");
-        txtFim.setText("");
-        txtTdescricao.setText("");
+       
         new criar_formulario().setVisible(true);
         dispose();
     }

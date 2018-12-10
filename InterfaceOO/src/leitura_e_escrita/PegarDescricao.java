@@ -43,13 +43,10 @@ public class PegarDescricao {
              bw.write("____________PERGUNTAS_____________");
              bw.newLine();
              bw.newLine();
-             bw.write("");
+             bw.write("@");
              
              bw.close();
              fw.close();
-             
-             // pw.flush(); //envia os dados direto pro arquivo
-             
              
              
          } catch (IOException e) {
