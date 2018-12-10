@@ -5,7 +5,7 @@
  */
 package views;
 
-import excecoes.erro_enunciado_lista;
+import excecoes.erro_enunciado;
 import javax.swing.*;
 import java.io.*;
 /**
@@ -122,7 +122,7 @@ public class pergunta_aberta_longa extends javax.swing.JFrame {
         pergunta = areaText.getText();
         
     if ( areaText.getText().trim().equals(""))
-           new erro_enunciado_lista().setVisible(true);
+           new erro_enunciado().setVisible(true);
         
     else{
         
