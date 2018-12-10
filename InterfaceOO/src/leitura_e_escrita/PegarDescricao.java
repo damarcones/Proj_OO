@@ -21,10 +21,7 @@ public class PegarDescricao {
   
 
     public PegarDescricao(String nome, String inicio, String fim, String descricao) {
-
-
-    DescricaoVazia Vazia = new DescricaoVazia(nome, inicio, fim, descricao);
-     if ( Vazia != true ){
+    
          
          try {
              FileWriter fw = new FileWriter("formulario/"+nome+".txt", true);
@@ -40,6 +37,13 @@ public class PegarDescricao {
              bw.newLine();
              bw.write("");
              bw.newLine();
+             bw.write("");
+             bw.newLine();
+             bw.write("");
+             bw.write("____________PERGUNTAS_____________");
+             bw.newLine();
+             bw.newLine();
+             bw.write("");
              
              bw.close();
              fw.close();
@@ -51,11 +55,6 @@ public class PegarDescricao {
          } catch (IOException e) {
              JOptionPane.showMessageDialog(null, "Erro: Nao foi possivel salvar no arquivo!", "Error", 2);
          }
-         new criar_formulario().setVisible(true);
-     }
-    else{
-         new erro_descricao().setVisible(true);
-     }
     }
 }
     

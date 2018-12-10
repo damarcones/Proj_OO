@@ -6,6 +6,7 @@
 
 package views;
 
+import excecoes.DescricaoVazia;
 import excecoes.erro_descricao;
 import javax.swing.*;
 import java.io.*;
@@ -16,45 +17,7 @@ import leitura_e_escrita.PegarDescricao;
  * @author damarcones
  */
 public class descricao_formulario extends javax.swing.JFrame {
-    
-//    private String nome;
-//    private String inicio;
-//    private String fim;
-//    private String descricao;
-//    public Object salvar;
-//
-//
-//    public String getNome() {
-//        return nome;
-//    }
-//
-//    public void setNome(String nome) {
-//        this.nome = nome;
-//    }
-//
-//    public String getInicio() {
-//        return inicio;
-//    }
-//
-//    public void setInicio(String inicio) {
-//        this.inicio = inicio;
-//    }
-//
-//    public String getFim() {
-//        return fim;
-//    }
-//
-//    public void setFim(String fim) {
-//        this.fim = fim;
-//    }
-//
-//    public String getDescricao() {
-//        return descricao;
-//    }
-//
-//    public void setDescricao(String descricao) {
-//        this.descricao = descricao;
-//    }
+
     /** Creates new form descricao_formulario */
     public descricao_formulario() {
         initComponents();
@@ -206,12 +169,23 @@ public class descricao_formulario extends javax.swing.JFrame {
     String inicio = txtInicio.getText();
     String fim = txtFim.getText();
     String descricao = txtTdescricao.getText();
-
-    PegarDescricao pegar = new PegarDescricao(nome, inicio, fim, descricao);
-
-    txtInicio.setText("");
-    txtFim.setText("");
-    txtTdescricao.setText("");
+    
+     DescricaoVazia Vazia = new DescricaoVazia(nome, inicio, fim, descricao);
+   
+     
+    if(Vazia.vazia == 0){
+        PegarDescricao pegar = new PegarDescricao(nome, inicio, fim, descricao);
+        txtNome.setText("");
+        txtInicio.setText("");
+        txtFim.setText("");
+        txtTdescricao.setText("");
+        new criar_formulario().setVisible(true);
+        dispose();
+    }
+    
+    else {
+        new erro_descricao().setVisible(true);
+    }
     
     
     }//GEN-LAST:event_jButton1ActionPerformed
