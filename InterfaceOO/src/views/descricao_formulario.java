@@ -9,6 +9,7 @@ package views;
 import excecoes.erro_descricao;
 import javax.swing.*;
 import java.io.*;
+import leitura_e_escrita.PegarDescricao;
 
 /**
  *
@@ -16,44 +17,44 @@ import java.io.*;
  */
 public class descricao_formulario extends javax.swing.JFrame {
     
-    private String nome;
-    private String inicio;
-    private String fim;
-    private String descricao;
-    public Object salvar;
-
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getInicio() {
-        return inicio;
-    }
-
-    public void setInicio(String inicio) {
-        this.inicio = inicio;
-    }
-
-    public String getFim() {
-        return fim;
-    }
-
-    public void setFim(String fim) {
-        this.fim = fim;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+//    private String nome;
+//    private String inicio;
+//    private String fim;
+//    private String descricao;
+//    public Object salvar;
+//
+//
+//    public String getNome() {
+//        return nome;
+//    }
+//
+//    public void setNome(String nome) {
+//        this.nome = nome;
+//    }
+//
+//    public String getInicio() {
+//        return inicio;
+//    }
+//
+//    public void setInicio(String inicio) {
+//        this.inicio = inicio;
+//    }
+//
+//    public String getFim() {
+//        return fim;
+//    }
+//
+//    public void setFim(String fim) {
+//        this.fim = fim;
+//    }
+//
+//    public String getDescricao() {
+//        return descricao;
+//    }
+//
+//    public void setDescricao(String descricao) {
+//        this.descricao = descricao;
+//    }
     /** Creates new form descricao_formulario */
     public descricao_formulario() {
         initComponents();
@@ -201,60 +202,19 @@ public class descricao_formulario extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     
-    nome = txtNome.getText();
-    inicio = txtInicio.getText();
-    fim = txtFim.getText();
-    descricao = txtTdescricao.getText();
-    
-    if ( txtTdescricao.getText().trim().equals("")  ||txtNome.getText().trim().equals("") || txtInicio.getText().trim().isEmpty() || txtFim.getText().trim().isEmpty() ){
-        new erro_descricao().setVisible(true);
-    }
-    else{
-        
-        try {
-            FileWriter fw = new FileWriter("formulario/"+nome+".txt", true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            
-            bw.write("Nome do formulário: "+nome);
-            bw.newLine();
-            bw.write("Data de Inicio: "+inicio);
-            bw.newLine();
-            bw.write("Data de termino: "+fim);
-            bw.newLine();
-            bw.write("Descrição do formulário: "+descricao);
-            bw.newLine();
-            bw.write("");
-            bw.newLine();
+    String nome = txtNome.getText();
+    String inicio = txtInicio.getText();
+    String fim = txtFim.getText();
+    String descricao = txtTdescricao.getText();
 
-            bw.close();
-            fw.close();
+    PegarDescricao pegar = new PegarDescricao(nome, inicio, fim, descricao);
 
-           // pw.flush(); //envia os dados direto pro arquivo
-      
-            
-            
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Erro: Nao foi possivel salvar no arquivo!", "Error", 2);
-        }
-        
-       
+    txtInicio.setText("");
+    txtFim.setText("");
+    txtTdescricao.setText("");
     
     
-    
-        
-        
-       //JOptionPane.showMessageDialog(null, ler_descricao.salvar());
-      
-       
-       txtInicio.setText("");
-       txtFim.setText("");
-       txtTdescricao.setText("");   
-      // return ler_descricao.setnome;
-       new criar_formulario().setVisible(true);
-       dispose();
-    }
     }//GEN-LAST:event_jButton1ActionPerformed
-
     private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
 //        Ler_descricao descr = new Ler_descricao();
 //        
