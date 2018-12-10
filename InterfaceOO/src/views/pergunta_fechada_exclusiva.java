@@ -1,6 +1,11 @@
 
 package views;
 
+import excecoes.EnunciadoVazio2;
+import excecoes.erro_alternativas;
+import leitura_e_escrita.Pegar_perg_alternativa;
+import leitura_e_escrita.Pegar_perg_exclusiva;
+
 public class pergunta_fechada_exclusiva extends javax.swing.JFrame {
 
     public pergunta_fechada_exclusiva() {
@@ -86,8 +91,20 @@ public class pergunta_fechada_exclusiva extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String pergunta = jTextArea1.getText();
+        String alternativa = jTextArea2.getText();
+        
+        EnunciadoVazio2 Vazio = new EnunciadoVazio2(pergunta, alternativa);
+        
+    if(Vazio.vazia == 0){
+        Pegar_perg_exclusiva pegar = new Pegar_perg_exclusiva(pergunta, alternativa);  
+        
         new criar_formulario().setVisible(true);
         dispose();
+    }   
+    else{
+         new erro_alternativas().setVisible(true);
+    }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     //@param args the command line arguments

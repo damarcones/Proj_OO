@@ -1,9 +1,13 @@
 
 package views;
 
+import excecoes.EnunciadoVazio;
+import excecoes.erro_descricao;
 import excecoes.erro_enunciado;
 import javax.swing.*;
 import java.io.*;
+import leitura_e_escrita.Pegar_perg_longa;
+import leitura_e_escrita.Pegar_pergunta;
 
 
 public class pergunta_aberta_longa extends javax.swing.JFrame {
@@ -109,40 +113,17 @@ public class pergunta_aberta_longa extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+                
         pergunta = areaText.getText();
+        EnunciadoVazio Vazio = new EnunciadoVazio(pergunta);
+    if(Vazio.vazia == 0){
+        Pegar_perg_longa pegar = new Pegar_perg_longa(pergunta);  
         
-    if ( areaText.getText().trim().equals(""))
-           new erro_enunciado().setVisible(true);
-        
-    else{
-        
-        try {
-            FileWriter fw = new FileWriter("descricao.txt", true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            
-            bw.write(pergunta);
-            bw.newLine();
-          
-            bw.write("");
-            bw.newLine();
-
-            bw.close();
-            fw.close();
-
-           // pw.flush(); //envia os dados direto pro arquivo
-      
-            
-            
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Erro: Nao foi possivel salvar no arquivo!", "Error", 2);
-        }
-         
-        
-        
-        setLocationRelativeTo( null );
-        setDefaultCloseOperation(criar_formulario.DISPOSE_ON_CLOSE);
         new criar_formulario().setVisible(true);
         dispose();
+    }   
+    else{
+         new erro_descricao().setVisible(true);
     }
         
     }//GEN-LAST:event_jButton1ActionPerformed

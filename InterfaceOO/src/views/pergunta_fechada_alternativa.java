@@ -1,6 +1,12 @@
 
 package views;
 
+import excecoes.EnunciadoVazio2;
+import excecoes.erro_alternativas;
+import excecoes.erro_descricao;
+import leitura_e_escrita.Pegar_perg_alternativa;
+import leitura_e_escrita.Pegar_pergunta;
+
 public class pergunta_fechada_alternativa extends javax.swing.JFrame {
 
     public pergunta_fechada_alternativa() {
@@ -16,11 +22,11 @@ public class pergunta_fechada_alternativa extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        PerguntaText = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        AlternativasText = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -30,9 +36,9 @@ public class pergunta_fechada_alternativa extends javax.swing.JFrame {
 
         jLabel2.setText("Pergunta:");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        PerguntaText.setColumns(20);
+        PerguntaText.setRows(5);
+        jScrollPane1.setViewportView(PerguntaText);
 
         jButton1.setText("Salvar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -43,9 +49,9 @@ public class pergunta_fechada_alternativa extends javax.swing.JFrame {
 
         jLabel3.setText("Alternativas (Separe-as com ponto e vírgula (;) e Enter):");
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        AlternativasText.setColumns(20);
+        AlternativasText.setRows(5);
+        jScrollPane2.setViewportView(AlternativasText);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -98,10 +104,21 @@ public class pergunta_fechada_alternativa extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        setLocationRelativeTo( null );
-        setDefaultCloseOperation(criar_formulario.DISPOSE_ON_CLOSE);
+        
+        String pergunta = PerguntaText.getText();
+        String alternativa = AlternativasText.getText();
+        
+        EnunciadoVazio2 Vazio = new EnunciadoVazio2(pergunta, alternativa);
+        
+    if(Vazio.vazia == 0){
+        Pegar_perg_alternativa pegar = new Pegar_perg_alternativa(pergunta, alternativa);  
+        
         new criar_formulario().setVisible(true);
         dispose();
+    }   
+    else{
+         new erro_alternativas().setVisible(true);
+    }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     //@param args the command line arguments
@@ -116,6 +133,8 @@ public class pergunta_fechada_alternativa extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea AlternativasText;
+    private javax.swing.JTextArea PerguntaText;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -123,7 +142,5 @@ public class pergunta_fechada_alternativa extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
 }

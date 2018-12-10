@@ -13,22 +13,25 @@ import java.lang.*;
  *
  * @author damarcones
  */
-public class DescricaoVazia {
+public class EnunciadoVazio2 {
 
     public int vazia;
 
    
 
-    public DescricaoVazia(String nome, String inicio, String fim, String descricao) {
+    public EnunciadoVazio2(String pergunta, String alternativa) {
 
-        if((nome.trim().equals("") || inicio.trim().equals("") || fim.trim().equals("") || descricao.trim().equals(""))== true ) {
+        if((pergunta.trim().equals("") || alternativa.trim().equals(""))== true ) {
             vazia =1 ;
         }
         else 
             vazia = 0;
     }
-
-    public DescricaoVazia(String pergunta) {
+    
+    public void vazia(String nome, String inicio, String fim, String descricao) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    
+    
 }

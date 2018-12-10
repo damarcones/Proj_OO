@@ -1,6 +1,11 @@
 
 package views;
 
+import excecoes.EnunciadoVazio;
+import excecoes.erro_descricao;
+import leitura_e_escrita.Pegar_perg_opcional;
+import leitura_e_escrita.Pegar_pergunta;
+
 public class pergunta_fechada_opcional extends javax.swing.JFrame {
 
     public pergunta_fechada_opcional() {
@@ -96,8 +101,17 @@ public class pergunta_fechada_opcional extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String pergunta = jTextArea1.getText();
+        EnunciadoVazio Vazio = new EnunciadoVazio(pergunta);
+    if(Vazio.vazia == 0){
+        Pegar_perg_opcional pegar = new Pegar_perg_opcional(pergunta);  
+        
         new criar_formulario().setVisible(true);
         dispose();
+    }   
+    else{
+         new erro_descricao().setVisible(true);
+    }
     }//GEN-LAST:event_jButton1ActionPerformed
 
      //@param args the command line arguments

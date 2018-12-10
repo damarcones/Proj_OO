@@ -5,6 +5,7 @@ public class erro_alternativas extends javax.swing.JFrame {
 
     public erro_alternativas() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")

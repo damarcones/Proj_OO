@@ -10,6 +10,19 @@ import leitura_e_escrita.Pegar_pergunta;
 
 public class descricao_formulario extends javax.swing.JFrame {
 
+   private String pergunta;
+    private String nome;
+    
+  //  nome = views.criar_formulario().nome;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
     /** Creates new form descricao_formulario */
     public descricao_formulario() {
         initComponents();
@@ -153,15 +166,12 @@ public class descricao_formulario extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     
-    String nome = txtNome.getText();
+    nome = txtNome.getText();
     String inicio = txtInicio.getText();
     String fim = txtFim.getText();
     String descricao = txtTdescricao.getText();
     
     DescricaoVazia Vazia = new DescricaoVazia(nome, inicio, fim, descricao);
-    Pegar_pergunta curta = new Pegar_pergunta(nome);
-   
-     
     if(Vazia.vazia == 0){
         PegarDescricao pegar = new PegarDescricao(nome, inicio, fim, descricao);
        

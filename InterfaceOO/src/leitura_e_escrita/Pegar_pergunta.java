@@ -9,21 +9,34 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.JOptionPane;
+import views.descricao_formulario;
+import views.pergunta_aberta_curta;
+import leitura_e_escrita.PegarDescricao;
 
 /**
  *
  * @author bruna
  */
 public class Pegar_pergunta {
+
+ 
     
-    public Pegar_pergunta(String nome, String pergunta){
-        
+    public Pegar_pergunta(String pergunta){
+         
+    
      try {
-             FileWriter fw = new FileWriter("formularios/"+ nome + ".txt", true);
+            String nome = null;
+             FileWriter fw = new FileWriter("perguntas.txt", true);
              BufferedWriter bw = new BufferedWriter(fw);
              
             bw.newLine();
             bw.write("(Pergunta do tipo aberta curta)");
+            bw.newLine();
+            bw.write("");
+            bw.newLine();
+            bw.write("#");
+            bw.newLine();
+            bw.write("");
              
             bw.write(pergunta);
            
@@ -41,9 +54,4 @@ public class Pegar_pergunta {
              JOptionPane.showMessageDialog(null, "Erro: Nao foi possivel salvar no arquivo!", "Error", 2);
          }
     }
-
-    public Pegar_pergunta(String nome) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }

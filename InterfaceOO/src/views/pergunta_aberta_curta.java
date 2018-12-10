@@ -1,9 +1,13 @@
 
 package views;
+import excecoes.DescricaoVazia;
+import excecoes.EnunciadoVazio;
+import excecoes.erro_descricao;
 import excecoes.erro_enunciado;
 import java.awt.Menu;
 import javax.swing.*;
 import java.io.*;
+import leitura_e_escrita.Pegar_pergunta;
 import views.criar_formulario.*;
 //import static views.descricao_formulario.nome;
 
@@ -124,34 +128,15 @@ public class pergunta_aberta_curta extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
                 
         pergunta = areaPergunta.getText();
-        
-    if ( jButton1.getText().trim().equals(""))
-           new erro_enunciado().setVisible(true);
-        
-    else{
-        try {
-            FileWriter fw = new FileWriter("formulario/"+nome+".txt", true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            
-            bw.write(pergunta);
-            bw.newLine();
-          
-            bw.write("");
-            bw.newLine();
-
-            bw.close();
-            fw.close();
-
-           // pw.flush(); //envia os dados direto pro arquivo
-      
-            
-            
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Erro: Nao foi possivel salvar no arquivo!", "Error", 2);
-        }
+        EnunciadoVazio Vazio = new EnunciadoVazio(pergunta);
+    if(Vazio.vazia == 0){
+        Pegar_pergunta pegar = new Pegar_pergunta(pergunta);  
         
         new criar_formulario().setVisible(true);
         dispose();
+    }   
+    else{
+         new erro_descricao().setVisible(true);
     }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -175,6 +160,8 @@ public class pergunta_aberta_curta extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+
+   
 
    
 }
