@@ -13,9 +13,6 @@ import views.descricao_formulario;
  */
 public class erro_descricao extends javax.swing.JFrame {
 
-    /**
-     * Creates new form erro_excecao
-     */
     public erro_descricao() {
         initComponents();
         this.setLocationRelativeTo(null);
